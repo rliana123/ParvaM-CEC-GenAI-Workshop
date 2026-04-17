@@ -1,0 +1,17 @@
+AI- Machine thinks like Human, Acts like Human & Works like Human. It is a large superset
+
+ ML Subset of AI, Takes Data as the Input & Predicts the Output based on the Training
+
+DL Subset of AI & M1, Takes Media based Input(images & videos) and predicts the output.
+
+Gen AI Generates the new content like code, text, audio, video & images.
+
+AI tools: 
+chatgpt n gemini for multi purpose image,text,code
+claude- code n documentation
+nano banana n leonardo ai- image generation
+suno- audio
+veo3- video
+IDE based agents-
+Github Co-pilot, antigravity(google)
+codex(openAi), Kiro(AWS)
