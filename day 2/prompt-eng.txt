@@ -1,0 +1,27 @@
+prompt refers to 
+
+prompt engineering is an art of asking questions to any AI chatbot to get best effective results from it.
+
+types:
+1> zero shot prompt engineering
+prompt doesnt contain any examples or context
+Ex:
+
+2>few shot Prompt engineering
+contains some ref examples or some context
+Ex:write prgm to find palindrome numbers
+
+3>chain of thought(CoT)
+Verify the answer with step by step solving of the problem(commonly mathematical problems)
+ex:
+
+4>Role or Persona prompt:
+inform AI,
+Ex:You r CV expert, I need proper CV format to crack the interview.
+You r python expert, need to prepare for interview, help with commonly asked interview questions.
+
+5>system or instruction prompt:
+
+
+6>negative prompt:
+To get results by eliminating respective words
