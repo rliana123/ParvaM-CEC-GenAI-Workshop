@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Student List | ParvaM Auth{% endblock %}
+{% block content %}
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Student Registration</h2>
+    <p class="text-muted">Create, view, update, and delete student records from this dashboard.</p>
+  </div>
+  <div class="mb-4 d-flex justify-content-between flex-column flex-md-row gap-3">
+    <a href="{{ url_for('add_student') }}" class="btn btn-primary btn-lg">Add New Student</a>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary btn-lg">Back to Dashboard</a>
+  </div>
+  {% if students %}
+    <div class="table-responsive">
+      <table class="table table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Created</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr>
+              <td>{{ student['id'] }}</td>
+              <td>{{ student['name'] }}</td>
+              <td>{{ student['email'] }}</td>
+              <td>{{ student['age'] }}</td>
+              <td>{{ student['course'] }}</td>
+              <td>{{ student['created_at'] }}</td>
+              <td class="text-end">
+                <a href="{{ url_for('view_student', student_id=student['id']) }}" class="btn btn-sm btn-outline-primary">View</a>
+                <a href="{{ url_for('edit_student', student_id=student['id']) }}" class="btn btn-sm btn-outline-success">Edit</a>
+                <form action="{{ url_for('delete_student', student_id=student['id']) }}" method="POST" class="d-inline">
+                  <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this student?');">Delete</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="p-4 bg-white rounded-4 shadow-sm text-center">
+      <p class="mb-0">No students registered yet. Add a new student to get started.</p>
+    </div>
+  {% endif %}
+{% endblock %}
